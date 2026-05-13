@@ -1,0 +1,37 @@
+name: mithic-jidt
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pip
+  - numpy=1.26.4
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - jupyterlab
+  - tqdm
+
+  # Java bridge — required to start the JVM and load infodynamics.jar
+  - openjdk=17
+  - jpype1
+
+  # Needed for IDTxl compilation + extensions
+  - h5py
+  - cython
+  - wheel
+  - pip
+
+  # IMPORTANT: setuptools pinned to avoid pkg_resources issues
+  # (newer setuptools versions can break legacy imports on some setups)
+  - setuptools=75.8.0
+
+  - pip:
+      - tqdm
+
+      # IDTxl must be installed from source:
+      # git clone https://github.com/pwollstadt/IDTxl.git
+      # cd IDTxl
+      # pip install . --no-build-isolation

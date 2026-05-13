@@ -1,0 +1,19 @@
+name: mithic-hoi
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pip
+  - numpy=1.26.4
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - jupyterlab
+  - tqdm
+
+  - pip:
+      - hoi==0.0.5
+      - xgi==0.9

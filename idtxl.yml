@@ -1,0 +1,43 @@
+name: mithic-idtxl
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+
+  # Core scientific stack
+  - numpy=1.26.4
+  - scipy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - networkx
+
+  # Jupyter ecosystem
+  - notebook
+  - ipykernel
+  - ipywidgets
+
+  # Java dependency for JIDT (used inside IDTxl)
+  - openjdk=17
+  - jpype1
+
+  # Needed for IDTxl compilation + extensions
+  - h5py
+  - cython
+  - wheel
+  - pip
+
+  # IMPORTANT: setuptools pinned to avoid pkg_resources issues
+  # (newer setuptools versions can break legacy imports on some setups)
+  - setuptools=75.8.0
+
+  - pip:
+      - tqdm
+
+      # IDTxl must be installed from source:
+      # git clone https://github.com/pwollstadt/IDTxl.git
+      # cd IDTxl
+      # pip install . --no-build-isolation
